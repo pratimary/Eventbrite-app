@@ -1,0 +1,69 @@
+
+<%
+var now = new Date();
+var next_week_start = new Date(now.getFullYear(), now.getMonth(), now.getDate()+(6 - now.getDay()));
+
+var DayNames = ["SUN", "MON", "TUE","WED","THUR", "FRI", "SAT"];
+var monthNames = ["JAN", "FEB", "MAR","APR", "MAY", "JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+%>
+<% _.each(events, function (event) { %>
+<a target="_blank" href="<%= event.url %>">
+<div class="page-row">
+    <div class="img-header">
+    <div class="image">
+
+
+
+            <% if(event.logo!=null)
+            { %>
+
+
+            <img class="thumbnail" width="200px" height="200px" alt="alternative text" src="<%= event.logo.url %>">
+
+
+<%
+
+        }
+        else
+        {
+
+        %>
+        <img class="thumbnail" width="200px" height="200px" alt="alternative text" src="assets/no-image-available.jpg">
+
+        <%
+        }
+        %>
+
+   </div>
+    </div>
+
+    <div class="info">
+        <%
+        var d=new Date(event.start.local);
+
+        if(next_week_start.getDay()==d.getDay() || d.getDay()==0)
+        {
+        %>
+        <div class="label label-warning" id="isWeekend">Weekend Event!</div>
+
+        <% } %>
+       <%
+        var sunday=new Date();
+        sunday.setDate(next_week_start.getDate()+1);
+        if(next_week_start.getTime()==d.getTime() || sunday.getTime()==d.getTime())
+        {
+
+        %>
+        <div class="label label-warning" id="ThisWeekend">Coming up this Weekend!</div>
+
+        <% }
+
+
+
+        %>
+            <div class="date"><%= DayNames[d.getDay()]+' , '+d.getDate()+' '+monthNames[d.getMonth()] %></div>
+            <h4><%= event.name.text%></h4>
+    </div>
+</div>
+</a>
+<% }); %>

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Eventbrite Challenge",
+  "description": "This extension is just going to have a textbox and search button.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+  ]
+}

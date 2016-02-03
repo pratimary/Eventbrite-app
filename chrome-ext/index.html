@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+<div class="jumbotron" style="width:600px; height:100px; background:white;">
+    <div class="container">
+        <img src ="logo.png" style = "height: 80px;" />
+    </div>
+</div>
+<div class="container" style="background: white; margin: 10px;">
+    <form id="search-form">
+        <div class="form-group">
+            <label for="locationInput">Enter a name of a city</label>
+            <input type="text" class="form-control" id="locationInput" placeholder="Eg: New York" />
+        </div>
+        <button type="submit" id="search" class="btn btn-primary">Search</button>
+        <p>&nbsp;</p>
+    </form>
+    <hr />
+    <h2 id="heading"></h2>
+        <div id="events-container" class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+
+
+
+    </div>
+</div>
+<script src="js/lib/jquery.min.js" type="text/javascript"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/underscore-min.js" type="text/javascript"></script>
+<script src="js/lib/backbone-min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/models/eventmodel.js"></script>
+<script src="js/views/eventview.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
